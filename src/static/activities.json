@@ -42128,6 +42128,38 @@
 "streak": 1
 },
 {
+"run_id": 1747736543000,
+"name": "\u798f\u5dde\u5e02 \u6b65\u884c",
+"distance": 1886.0729417318423,
+"moving_time": "0:22:19",
+"type": "Hike",
+"start_date": "2025-05-20 10:22:23",
+"start_date_local": "2025-05-20 18:22:23",
+"location_country": "\u4e39\u4e1c\u7ebf, \u6d0b\u4e2d\u539d, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "k_{|Ce_xxUq@OBo@fFiPbDZdJ{IzB{@dBAlDhAnPtIbBT~AxAsCjFaDzL{AMUV",
+"average_heartrate": 111.0,
+"average_speed": 1.4085682910618689,
+"elevation_gain": 13.0,
+"source": "Garmin Connect",
+"streak": 1
+},
+{
+"run_id": 1747821223000,
+"name": "\u798f\u5dde\u5e02 \u6b65\u884c",
+"distance": 3136.8773925624378,
+"moving_time": "0:41:13",
+"type": "Hike",
+"start_date": "2025-05-21 09:53:43",
+"start_date_local": "2025-05-21 17:53:43",
+"location_country": "\u4e39\u4e1c\u7ebf, \u6d0b\u4e2d\u539d, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "oxz|Cq`xxU|BfAcAzBqIqD~EaQtDDrHoHtDcBfEh@pRtJdBZzAxAkCfFuDlM{FkBuFrB{C{@kBbEY@eLoEWg@l@eBwBgACk@u@e@",
+"average_heartrate": 103.0,
+"average_speed": 1.268450219394435,
+"elevation_gain": 13.0,
+"source": "Garmin Connect",
+"streak": 2
+},
+{
 "run_id": 14548778245,
 "name": "Afternoon Run",
 "distance": 5038.8,
@@ -42208,6 +42240,38 @@
 "streak": 5
 },
 {
+"run_id": 1748079128000,
+"name": "\u798f\u5dde\u5e02 \u6b65\u884c",
+"distance": 6060.467957072703,
+"moving_time": "1:20:12",
+"type": "Hike",
+"start_date": "2025-05-24 09:32:08",
+"start_date_local": "2025-05-24 17:32:08",
+"location_country": "\u4e39\u4e1c\u7ebf, \u6d0b\u4e2d\u539d, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "uyz|CqaxxUlDnAcAjCwIwDfFaQvDN|HyHbDyAhEd@lRvJt@ArDhC~BkArM{KlFg@zF?pXlIjLtCOi@_e@aNcMJmJnGyHvGsB|CyEnOaFkBqFnBoDs@cBzD]DyKcEi@w@h@iB{DaB",
+"average_heartrate": 98.0,
+"average_speed": 1.2594488688846017,
+"elevation_gain": 19.0,
+"source": "Garmin Connect",
+"streak": 5
+},
+{
+"run_id": 1748123670000,
+"name": "\u798f\u5dde\u5e02 - \u57fa\u7840\u8bad\u7ec3",
+"distance": 4469.559421796263,
+"moving_time": "0:29:21",
+"type": "Run",
+"start_date": "2025-05-24 21:54:30",
+"start_date_local": "2025-05-25 05:54:30",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "y}z|CmgxxUdC_JjDVlJ_JjDaAzB`@tZlOzQcNnBg@dJI|v@pTAe@sv@}TkLTwEfC",
+"average_heartrate": 140.0,
+"average_speed": 2.538080307663977,
+"elevation_gain": 8.0,
+"source": "Garmin Connect",
+"streak": 6
+},
+{
 "run_id": 14598450101,
 "name": "Afternoon Run",
 "distance": 5078.0,
@@ -42221,7 +42285,7 @@
 "average_speed": 2.58,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 1
+"streak": 7
 },
 {
 "run_id": 14608542160,
@@ -42237,7 +42301,7 @@
 "average_speed": 2.54,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 2
+"streak": 8
 },
 {
 "run_id": 14618937137,
@@ -42253,7 +42317,7 @@
 "average_speed": 1.068,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 3
+"streak": 9
 },
 {
 "run_id": 14625339552,
@@ -42269,7 +42333,7 @@
 "average_speed": 3.403,
 "elevation_gain": 10.0,
 "source": "strava",
-"streak": 4
+"streak": 10
 },
 {
 "run_id": 14629424423,
@@ -42285,7 +42349,7 @@
 "average_speed": 2.712,
 "elevation_gain": 40.6,
 "source": "strava",
-"streak": 4
+"streak": 10
 },
 {
 "run_id": 14639519176,
@@ -42301,7 +42365,23 @@
 "average_speed": 2.735,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 5
+"streak": 11
+},
+{
+"run_id": 1748641693000,
+"name": "\u798f\u5dde\u5e02 - 35\u5206\u949f\u8dd1\u6b65\u6709\u6c27",
+"distance": 4910.357991010307,
+"moving_time": "0:36:59",
+"type": "Run",
+"start_date": "2025-05-30 21:48:13",
+"start_date_local": "2025-05-31 05:48:13",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "c_{|C_exxUrDqLrDVlIsI|DgApCh@rYfOnRiN~Bg@vHElw@vTNe@kw@_UcL@yM|JkGhG",
+"average_heartrate": 133.0,
+"average_speed": 2.2128697571024367,
+"elevation_gain": 7.0,
+"source": "Garmin Connect",
+"streak": 12
 },
 {
 "run_id": 14646297101,
@@ -42317,7 +42397,7 @@
 "average_speed": 3.312,
 "elevation_gain": 23.8,
 "source": "strava",
-"streak": 6
+"streak": 12
 },
 {
 "run_id": 14661286627,
@@ -42333,7 +42413,7 @@
 "average_speed": 1.293,
 "elevation_gain": 7.6,
 "source": "strava",
-"streak": 7
+"streak": 13
 },
 {
 "run_id": 14667901424,
@@ -42349,7 +42429,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 8
+"streak": 14
 },
 {
 "run_id": 14670564280,
@@ -42365,7 +42445,7 @@
 "average_speed": 3.57,
 "elevation_gain": 2.4,
 "source": "strava",
-"streak": 8
+"streak": 14
 },
 {
 "run_id": 14681348042,
@@ -42381,7 +42461,7 @@
 "average_speed": 2.605,
 "elevation_gain": 37.8,
 "source": "strava",
-"streak": 9
+"streak": 15
 },
 {
 "run_id": 14688373285,
@@ -42397,7 +42477,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 10
+"streak": 16
 },
 {
 "run_id": 14711150748,
@@ -42413,7 +42493,7 @@
 "average_speed": 2.691,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 10
+"streak": 16
 },
 {
 "run_id": 14702970618,
@@ -42429,7 +42509,7 @@
 "average_speed": 2.665,
 "elevation_gain": 39.2,
 "source": "strava",
-"streak": 11
+"streak": 17
 },
 {
 "run_id": 14709302759,
@@ -42445,7 +42525,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 12
+"streak": 18
 },
 {
 "run_id": 14712353511,
@@ -42461,7 +42541,7 @@
 "average_speed": 3.128,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 12
+"streak": 18
 },
 {
 "run_id": 14718720593,
@@ -42477,7 +42557,23 @@
 "average_speed": 2.872,
 "elevation_gain": 10.2,
 "source": "strava",
-"streak": 13
+"streak": 19
+},
+{
+"run_id": 1749332835000,
+"name": "\u798f\u5dde\u5e02 - \u57fa\u7840\u8bad\u7ec3",
+"distance": 5608.58766700692,
+"moving_time": "0:38:00",
+"type": "Run",
+"start_date": "2025-06-07 21:47:15",
+"start_date_local": "2025-06-08 05:47:15",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "wsz|CsqxxUzIcJnEaAxBj@xY~NdQ}M|Ci@lIEvdAdZ`NtBCi@_NoBodAqZcJHwCb@wNfLyBdC",
+"average_heartrate": 149.0,
+"average_speed": 2.459906871494263,
+"elevation_gain": 5.0,
+"source": "Garmin Connect",
+"streak": 20
 },
 {
 "run_id": 14728787178,
@@ -42493,7 +42589,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 14
+"streak": 20
 },
 {
 "run_id": 14742645373,
@@ -42509,7 +42605,7 @@
 "average_speed": 3.119,
 "elevation_gain": 40.8,
 "source": "strava",
-"streak": 15
+"streak": 21
 },
 {
 "run_id": 14753282435,
@@ -42525,7 +42621,7 @@
 "average_speed": 2.848,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 16
+"streak": 22
 },
 {
 "run_id": 14764027469,
@@ -42541,7 +42637,7 @@
 "average_speed": 2.731,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 17
+"streak": 23
 },
 {
 "run_id": 14775047885,
@@ -42557,7 +42653,7 @@
 "average_speed": 2.684,
 "elevation_gain": 46.0,
 "source": "strava",
-"streak": 18
+"streak": 24
 },
 {
 "run_id": 14781441121,
@@ -42573,7 +42669,7 @@
 "average_speed": 3.065,
 "elevation_gain": 8.4,
 "source": "strava",
-"streak": 19
+"streak": 25
 },
 {
 "run_id": 14786627564,
@@ -42589,7 +42685,7 @@
 "average_speed": 2.514,
 "elevation_gain": 13.6,
 "source": "strava",
-"streak": 19
+"streak": 25
 },
 {
 "run_id": 14796727063,
@@ -42605,7 +42701,7 @@
 "average_speed": 3.024,
 "elevation_gain": 18.4,
 "source": "strava",
-"streak": 20
+"streak": 26
 },
 {
 "run_id": 14805398833,
@@ -42621,7 +42717,7 @@
 "average_speed": 2.916,
 "elevation_gain": 8.2,
 "source": "strava",
-"streak": 21
+"streak": 27
 },
 {
 "run_id": 14815206533,
@@ -42637,7 +42733,7 @@
 "average_speed": 2.862,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 22
+"streak": 28
 },
 {
 "run_id": 14825795581,
@@ -42653,7 +42749,7 @@
 "average_speed": 2.77,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 23
+"streak": 29
 },
 {
 "run_id": 14834908925,
@@ -42669,7 +42765,7 @@
 "average_speed": 3.002,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 24
+"streak": 30
 },
 {
 "run_id": 14847893672,
@@ -42685,7 +42781,7 @@
 "average_speed": 2.686,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 25
+"streak": 31
 },
 {
 "run_id": 14855135311,
@@ -42701,7 +42797,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 26
+"streak": 32
 },
 {
 "run_id": 14856267062,
@@ -42717,7 +42813,7 @@
 "average_speed": 2.985,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 26
+"streak": 32
 },
 {
 "run_id": 14865057861,
@@ -42733,7 +42829,7 @@
 "average_speed": 3.095,
 "elevation_gain": 10.8,
 "source": "strava",
-"streak": 26
+"streak": 32
 },
 {
 "run_id": 14864773203,
@@ -42749,7 +42845,23 @@
 "average_speed": 2.823,
 "elevation_gain": 10.6,
 "source": "strava",
-"streak": 27
+"streak": 33
+},
+{
+"run_id": 1750498897000,
+"name": "\u798f\u5dde\u5e02 - Run Walk Run\u00ae",
+"distance": 4142.695739786649,
+"moving_time": "0:28:50",
+"type": "Run",
+"start_date": "2025-06-21 09:41:37",
+"start_date_local": "2025-06-21 17:41:37",
+"location_country": "\u4e39\u4e1c\u7ebf, \u6d0b\u4e2d\u539d, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "itz|Cs~wxUeAdCsIiDjFuQlDXjJ_JdD_AtDz@~QhJhB^p@|@pAd@jQ_N|Ck@tI?laAbYzLfBU_@mJaB",
+"average_heartrate": 139.0,
+"average_speed": 2.3946218149055776,
+"elevation_gain": 7.0,
+"source": "Garmin Connect",
+"streak": 33
 },
 {
 "run_id": 14879652320,
@@ -42765,7 +42877,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 28
+"streak": 34
 },
 {
 "run_id": 14886796848,
@@ -42781,7 +42893,7 @@
 "average_speed": 2.902,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 29
+"streak": 35
 },
 {
 "run_id": 14888652891,
@@ -42797,7 +42909,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 29
+"streak": 35
 },
 {
 "run_id": 14899337345,
@@ -42813,7 +42925,7 @@
 "average_speed": 2.806,
 "elevation_gain": 52.4,
 "source": "strava",
-"streak": 30
+"streak": 36
 },
 {
 "run_id": 14906141737,
@@ -42829,7 +42941,7 @@
 "average_speed": 3.14,
 "elevation_gain": 11.2,
 "source": "strava",
-"streak": 31
+"streak": 37
 },
 {
 "run_id": 14909475651,
@@ -42845,7 +42957,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 31
+"streak": 37
 },
 {
 "run_id": 14920647619,
@@ -42861,7 +42973,7 @@
 "average_speed": 2.76,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 32
+"streak": 38
 },
 {
 "run_id": 14928447684,
@@ -42877,7 +42989,7 @@
 "average_speed": 1.119,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 33
+"streak": 39
 },
 {
 "run_id": 14931923785,
@@ -42893,7 +43005,7 @@
 "average_speed": 2.698,
 "elevation_gain": 13.0,
 "source": "strava",
-"streak": 33
+"streak": 39
 },
 {
 "run_id": 14941502889,
@@ -42909,7 +43021,7 @@
 "average_speed": 0.0,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 34
+"streak": 40
 },
 {
 "run_id": 14952384327,
@@ -42925,7 +43037,7 @@
 "average_speed": 3.158,
 "elevation_gain": 17.8,
 "source": "strava",
-"streak": 35
+"streak": 41
 },
 {
 "run_id": 14988675826,
@@ -42941,7 +43053,7 @@
 "average_speed": 2.933,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 36
+"streak": 42
 },
 {
 "run_id": 14971412885,
@@ -42957,7 +43069,7 @@
 "average_speed": 2.936,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 37
+"streak": 43
 },
 {
 "run_id": 14988675713,
@@ -42973,7 +43085,7 @@
 "average_speed": 2.969,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 38
+"streak": 44
 },
 {
 "run_id": 14992527674,
@@ -42989,7 +43101,7 @@
 "average_speed": 2.909,
 "elevation_gain": 0.0,
 "source": "strava",
-"streak": 39
+"streak": 45
 },
 {
 "run_id": 15009539464,
@@ -44590,6 +44702,22 @@
 "elevation_gain": 50.4,
 "source": "strava",
 "streak": 21
+},
+{
+"run_id": 1761644792000,
+"name": "\u798f\u5dde\u5e02 \u8dd1\u6b65",
+"distance": 1258.6817774843842,
+"moving_time": "0:09:31",
+"type": "Run",
+"start_date": "2025-10-28 09:46:32",
+"start_date_local": "2025-10-28 17:46:32",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "m}z|CckxxUdBmFnDRlIiIvDmArFvA~OfIpBZrBbCj@O",
+"average_heartrate": 138.0,
+"average_speed": 2.204346370375454,
+"elevation_gain": 1.0,
+"source": "Garmin Connect",
+"streak": 22
 },
 {
 "run_id": 16297263944,
@@ -47632,6 +47760,22 @@
 "streak": 4
 },
 {
+"run_id": 1778060664000,
+"name": "\u798f\u5dde\u5e02 \u6b65\u884c",
+"distance": 4818.0141351751145,
+"moving_time": "1:03:10",
+"type": "Hike",
+"start_date": "2026-05-06 09:44:24",
+"start_date_local": "2026-05-06 17:44:24",
+"location_country": "\u4e39\u4e1c\u7ebf, \u6d0b\u4e2d\u539d, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "_wz|CozwxUTKyI}CRuDp@m@n@aDfAwAXeBpDF`JyI|B}@|DXnRtJfCt@|BfBvNeLrDaBlKM`JjCFe@YO{IkCeKNoDlAmSvQkKt\\yCeAmB?uVmJ_@u@l@kB",
+"average_heartrate": 99.0,
+"average_speed": 1.2712438351385527,
+"elevation_gain": 11.0,
+"source": "Garmin Connect",
+"streak": 4
+},
+{
 "run_id": 18471545187,
 "name": "\ud83c\udf25\ufe0f Afternoon Run",
 "distance": 5191.6,
@@ -47677,6 +47821,22 @@
 "average_speed": 5.378,
 "elevation_gain": 55.2,
 "source": "strava",
+"streak": 7
+},
+{
+"run_id": 1778306030000,
+"name": "\u798f\u5dde\u5e02 \u8dd1\u6b65",
+"distance": 992.0009684800916,
+"moving_time": "0:07:08",
+"type": "Run",
+"start_date": "2026-05-09 05:53:50",
+"start_date_local": "2026-05-09 13:53:50",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "aqz|CguxxUrFkFfC_AhA@bCn@hYxNzBgA",
+"average_heartrate": 134.0,
+"average_speed": 2.317759272149747,
+"elevation_gain": 0.0,
+"source": "Garmin Connect",
 "streak": 7
 },
 {
@@ -48622,5 +48782,21 @@
 "elevation_gain": 48.0,
 "source": "strava",
 "streak": 21
+},
+{
+"run_id": 1784972731000,
+"name": "\u798f\u5dde\u5e02 \u8dd1\u6b65",
+"distance": 3108.3962011238887,
+"moving_time": "0:21:18",
+"type": "Run",
+"start_date": "2026-07-25 09:45:31",
+"start_date_local": "2026-07-25 17:45:31",
+"location_country": "\u65b9\u6c99, \u957f\u4e50\u533a, \u798f\u5dde\u5e02, \u798f\u5efa\u7701, 350200, \u4e2d\u56fd",
+"summary_polyline": "e}z|CqhxxUWD`CeItDPlHuHnD_BfEf@pU~K`ChB|QqNnBa@nII~{@nV",
+"average_heartrate": 147.0,
+"average_speed": 2.4322348991579723,
+"elevation_gain": 0.0,
+"source": "Garmin Connect",
+"streak": 1
 }
 ]
