@@ -8,7 +8,7 @@
 locale: zh
 
 # 默认主题：system（跟随系统）| light（浅色）| dark（深色）
-theme: system
+theme: dark
 
 # ── 运动目标 ──────────────────────────────────────────────────────────────────
 # unit: distance → 单位 km
