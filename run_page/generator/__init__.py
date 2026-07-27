@@ -189,7 +189,21 @@ class Generator:
 
         self.session.commit()
 
+    def apply_privacy_filters(self):
+        activities = self.session.query(Activity).filter(
+            or_(
+                Activity.privacy_trimmed.is_(None),
+                Activity.privacy_trimmed != 1,
+            )
+        )
+        for activity in activities:
+            activity.summary_polyline = filter_out(activity.summary_polyline) or ""
+            activity.privacy_trimmed = 1
+        self.session.commit()
+
     def load(self):
+        # Persist privacy filtering once so the tracked database is also safe.
+        self.apply_privacy_filters()
         # if sub_type is not in the db, just add an empty string to it
         activities = self.session.query(Activity).filter(
             or_(
@@ -223,13 +237,12 @@ class Generator:
                 streak = 1
             activity.streak = streak
             last_date = date
-            if not IGNORE_BEFORE_SAVING:
-                activity.summary_polyline = filter_out(activity.summary_polyline)
             activity_list.append(activity.to_dict())
 
         return activity_list
 
     def loadForMapping(self):
+        self.apply_privacy_filters()
         activities = self.session.query(Activity).filter(
             Activity.type.in_(MAPPING_TYPE)
         )
@@ -258,7 +271,6 @@ class Generator:
                 streak = 1
             activity.streak = streak
             last_date = date
-            activity.summary_polyline = filter_out(activity.summary_polyline) or ""
             activity_list.append(activity.to_dict())
 
         return activity_list

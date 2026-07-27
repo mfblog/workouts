@@ -67,6 +67,7 @@ class Activity(Base):
     elevation_gain = Column(Float)
     streak = None
     source = Column(String)
+    privacy_trimmed = Column(Integer, default=0)
 
     def to_dict(self):
         out = {}
@@ -156,6 +157,7 @@ def update_or_create_activity(session, run_activity):
             activity.summary_polyline = (
                 run_activity.map and run_activity.map.summary_polyline or ""
             )
+            activity.privacy_trimmed = 0
             activity.source = source
     except Exception as e:
         print(f"something wrong with {run_activity.id}")
