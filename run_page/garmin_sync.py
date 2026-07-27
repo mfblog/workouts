@@ -262,12 +262,27 @@ async def download_garmin_data(client, activity_id, file_type="gpx"):
 
 async def get_activity_id_list(client, start=0):
     activities = await client.get_activities(start, 100)
-    if len(activities) > 0:
-        ids = list(map(lambda a: str(a.get("activityId", "")), activities))
-        print("Syncing Activity IDs")
-        return ids + await get_activity_id_list(client, start + 100)
-    else:
+    if not activities:
         return []
+
+    cutoff = os.getenv("ACTIVITY_START_DATE", "").strip()
+    ids = []
+    reached_cutoff = False
+    for activity in activities:
+        activity_date = str(
+            activity.get("startTimeLocal") or activity.get("startTimeGMT") or ""
+        )[:10]
+        if cutoff and activity_date and activity_date < cutoff:
+            reached_cutoff = True
+            continue
+        activity_id = str(activity.get("activityId", ""))
+        if activity_id:
+            ids.append(activity_id)
+
+    print(f"Syncing Activity IDs (page start={start}, kept={len(ids)})")
+    if reached_cutoff:
+        return ids
+    return ids + await get_activity_id_list(client, start + 100)
 
 
 async def gather_with_concurrency(n, tasks):

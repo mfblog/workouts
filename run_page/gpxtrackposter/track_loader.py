@@ -23,6 +23,8 @@ from synced_data_file_logger import load_synced_file_list
 
 log = logging.getLogger(__name__)
 
+ZERO_DISTANCE_TYPES = {"WeightTraining", "Workout", "StairStepper"}
+
 
 def load_gpx_file(file_name, activity_title_dict={}):
     """Load an individual GPX file as a track by using Track.load_gpx()"""
@@ -96,7 +98,11 @@ class TrackLoader:
         # merge tracks that took place within one hour
         tracks = self._merge_tracks(tracks)
         # filter out tracks with length < min_length
-        return [t for t in tracks if t.length >= self.min_length]
+        return [
+            t
+            for t in tracks
+            if t.length >= self.min_length or t.type in ZERO_DISTANCE_TYPES
+        ]
 
     def load_tracks_from_db(self, sql_file, is_grid=False, is_circular=False):
         session = init_db(sql_file)
@@ -135,7 +141,7 @@ class TrackLoader:
         filtered_tracks = []
         for t in tracks:
             file_name = t.file_names[0]
-            if int(t.length) == 0:
+            if int(t.length) == 0 and t.type not in ZERO_DISTANCE_TYPES:
                 log.info(f"{file_name}: skipping empty track")
             elif not t.start_time_local:
                 log.info(f"{file_name}: skipping track without start time")

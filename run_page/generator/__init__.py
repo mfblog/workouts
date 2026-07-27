@@ -6,7 +6,7 @@ import arrow
 import stravalib
 from config import MAPPING_TYPE
 from gpxtrackposter import track_loader
-from sqlalchemy import func
+from sqlalchemy import func, or_
 
 from polyline_processor import filter_out
 
@@ -191,11 +191,16 @@ class Generator:
 
     def load(self):
         # if sub_type is not in the db, just add an empty string to it
-        activities = (
-            self.session.query(Activity)
-            .filter(Activity.distance > 0.1)
-            .order_by(Activity.start_date_local)
+        activities = self.session.query(Activity).filter(
+            or_(
+                Activity.distance > 0.1,
+                Activity.type.in_(["WeightTraining", "Workout", "StairStepper"]),
+            )
         )
+        cutoff = os.getenv("ACTIVITY_START_DATE", "").strip()
+        if cutoff:
+            activities = activities.filter(Activity.start_date_local >= cutoff)
+        activities = activities.order_by(Activity.start_date_local)
         activity_list = []
 
         streak = 0

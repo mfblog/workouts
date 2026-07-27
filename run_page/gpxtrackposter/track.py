@@ -104,12 +104,9 @@ class Track:
             if errors:
                 print(f"FIT file read fail: {errors}")
                 return
-            if (
-                messages.get("session_mesgs") is None
-                or messages.get("session_mesgs")[0].get("total_distance") is None
-            ):
+            if not messages.get("session_mesgs"):
                 print(
-                    f"Session message or total distance is missing when loading FIT. for file {self.file_names[0]}, we just ignore this file and continue"
+                    f"Session message is missing when loading FIT. for file {self.file_names[0]}, we just ignore this file and continue"
                 )
                 return
             self._load_fit_data(messages)
@@ -275,37 +272,46 @@ class Track:
             (message["start_time"] + FIT_EPOCH_S), tz=timezone.utc
         )
         self.run_id = self.__make_run_id(self.start_time)
+        elapsed_seconds = float(
+            message.get("total_elapsed_time") or message.get("total_timer_time") or 0
+        )
         self.end_time = datetime.datetime.fromtimestamp(
-            (message["start_time"] + FIT_EPOCH_S + message["total_elapsed_time"]),
+            (message["start_time"] + FIT_EPOCH_S + elapsed_seconds),
             tz=timezone.utc,
         )
-        self.length = message["total_distance"]
-        self.average_heartrate = (
-            message["avg_heart_rate"] if "avg_heart_rate" in message else None
-        )
-        self.elevation_gain = (
-            message["total_ascent"] if "total_ascent" in message else None
-        )
-        self.type = message["sport"].lower()
+        total_distance = float(message.get("total_distance") or 0)
+        self.length = total_distance
+        self.average_heartrate = message.get("avg_heart_rate")
+        self.elevation_gain = message.get("total_ascent")
+
+        sport = str(message.get("sport") or "workout").lower()
+        sub_sport = str(message.get("sub_sport") or "").lower()
+        if sub_sport == "strength_training":
+            self.type = "WeightTraining"
+        elif sport in {"walking", "hiking"} or sub_sport == "hiking":
+            self.type = "Hike"
+        elif sport == "running" or sub_sport in {"treadmill", "indoor_running"}:
+            self.type = "Run"
+        elif sport in {"training", "fitness_equipment"}:
+            self.type = "Workout"
+        else:
+            self.type = sport
 
         # moving_dict
-        self.moving_dict["distance"] = message["total_distance"]
+        self.moving_dict["distance"] = total_distance
         self.moving_dict["moving_time"] = datetime.timedelta(
             seconds=(
-                message["total_moving_time"]
-                if "total_moving_time" in message
-                else message["total_timer_time"]
+                message.get("total_moving_time")
+                or message.get("total_timer_time")
+                or message.get("total_elapsed_time")
+                or 0
             )
         )
-        self.moving_dict["elapsed_time"] = datetime.timedelta(
-            seconds=message["total_elapsed_time"]
+        self.moving_dict["elapsed_time"] = datetime.timedelta(seconds=elapsed_seconds)
+        self.moving_dict["average_speed"] = float(
+            message.get("enhanced_avg_speed") or message.get("avg_speed") or 0
         )
-        self.moving_dict["average_speed"] = (
-            message["enhanced_avg_speed"]
-            if message["enhanced_avg_speed"]
-            else message["avg_speed"]
-        )
-        for record in fit["record_mesgs"]:
+        for record in fit.get("record_mesgs", []):
             if "position_lat" in record and "position_long" in record:
                 lat = record["position_lat"] / SEMICIRCLE
                 lng = record["position_long"] / SEMICIRCLE
