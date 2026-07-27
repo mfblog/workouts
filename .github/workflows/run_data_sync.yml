@@ -1,4 +1,7 @@
-﻿name: Run Data Sync
+name: Run Data Sync
+
+permissions:
+  contents: write
 
 on:
   workflow_dispatch:
@@ -21,9 +24,9 @@ on:
 
 env:
   # please change to your own config.
-  RUN_TYPE: strava # support strava/nike/garmin/garmin_cn/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
-  GITHUB_NAME: zhaohongxuan  # change to yours
-  GITHUB_EMAIL: hxzhenu@gmail.com # change to yours
+  RUN_TYPE: garmin_cn # support strava/nike/garmin/garmin_cn/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
+  GITHUB_NAME: mfblog  # Git commit identity
+  GITHUB_EMAIL: 58280560@qq.com # Git commit identity
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 0 # Unit meter
@@ -32,7 +35,7 @@ env:
   IGNORE_RANGE: 0 # Unit meter
   SAVE_DATA_IN_GITHUB_CACHE: false # if you deploy in the vercal, check the README
   DATA_CACHE_PREFIX: 'track_data'
-  BUILD_GH_PAGES: true # If you do not need GitHub Page please set it to `false`
+  BUILD_GH_PAGES: false # If you do not need GitHub Page please set it to `false`
 
 jobs:
   sync:
@@ -168,13 +171,3 @@ jobs:
           git add .
           git commit -m 'Add new workouts' || echo "nothing to commit"
           git push || echo "nothing to push"
-
-  publish_github_pages:
-    if: needs.sync.result == 'success' && vars.BUILD_GH_PAGES != 'false'
-    name: Build and publish Github Pages
-    uses: ./.github/workflows/gh-pages.yml
-    with:
-      save_data_in_github_cache: false
-      data_cache_prefix: 'track_data'
-    needs:
-      - sync
