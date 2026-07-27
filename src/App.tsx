@@ -17,6 +17,7 @@ import { TracksPage } from './components/TracksPage'
 import { ChinaMap } from './components/ChinaMap'
 import { CheckinPage } from './components/CheckinPage'
 import rawActivities from './static/activities.json'
+import { REPO_URL } from './config'
 
 const activities = rawActivities as Activity[]
 
@@ -113,7 +114,7 @@ export default function App() {
           <div className="flex items-center justify-center gap-3">
             <span>&copy; {new Date().getFullYear()} Workout Dashboard.</span>
             <a
-              href="https://github.com/zhaohongxuan/workouts"
+              href={REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 hover:text-[var(--color-text)] transition-colors"

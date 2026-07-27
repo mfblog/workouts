@@ -4,11 +4,8 @@ import type { Activity, SportFilter } from '../types'
 import { useLocale } from '../hooks/useLocale'
 import { useGitHubAuthContext } from '../hooks/useGitHubAuthContext'
 import { formatDistance, parseMovingTime, extractProvince } from '../hooks/useActivities'
-import rawConfig from '@config'
+import { REPO_NAME, REPO_OWNER } from '../config'
 
-const config = rawConfig as { repoOwner?: string; repoName?: string }
-const REPO_OWNER = config.repoOwner ?? 'zhaohongxuan'
-const REPO_NAME  = config.repoName  ?? 'workouts'
 const WORKFLOW_FILE = 'run_data_sync.yml'
 
 type RunStatus = 'idle' | 'triggering' | 'queued' | 'in_progress' | 'success' | 'failure' | 'error'

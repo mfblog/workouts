@@ -17,12 +17,17 @@ interface AppConfig {
   locale: Locale
   theme: 'light' | 'dark' | 'system'
   goals: Record<string, GoalConfig>
+  repoOwner?: string
+  repoName?: string
 }
 
 const config = rawConfig as AppConfig
 
 export const DEFAULT_LOCALE: Locale = config.locale ?? 'zh'
 export const DEFAULT_THEME: 'light' | 'dark' | 'system' = config.theme ?? 'system'
+export const REPO_OWNER = config.repoOwner ?? 'mfblog'
+export const REPO_NAME = config.repoName ?? 'workouts'
+export const REPO_URL = `https://github.com/${REPO_OWNER}/${REPO_NAME}`
 export const GOALS: Record<string, GoalConfig> = config.goals ?? {}
 export const DEFAULT_GOAL: GoalConfig = GOALS.all ?? {
   yearly: 2000,
