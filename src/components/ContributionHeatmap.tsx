@@ -4,7 +4,6 @@ import type { Activity, SportFilter } from '../types'
 import { WORKOUT_TYPES } from '../types'
 import { getAvailableYears, formatDistance, parseMovingTime, formatPace } from '../hooks/useActivities'
 import { useLocale } from '../hooks/useLocale'
-import { BrandingBar } from './BrandingBar'
 
 const MAX_VISIBLE_YEARS = 10
 
@@ -506,7 +505,6 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
                 ))}
             </div>
             <div className="flex items-end justify-end gap-4 text-sm text-[var(--color-muted)] -mt-1">
-              <div className="mr-auto"><BrandingBar /></div>
               <span className="font-mono flex items-center gap-1">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 {allStats.count} {locale === 'zh' ? '次' : 'sessions'}
@@ -542,7 +540,6 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
             </div>
           )}
           <div className="flex items-end justify-end gap-4 text-sm text-[var(--color-muted)] -mt-1">
-            <BrandingBar />
             <span className="font-mono flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               {yearData[0].stats.count} {locale === 'zh' ? '次' : 'sessions'}

@@ -230,11 +230,13 @@ class Generator:
         return activity_list
 
     def loadForMapping(self):
-        activities = (
-            self.session.query(Activity)
-            .filter(Activity.type.in_(MAPPING_TYPE))
-            .order_by(Activity.start_date_local)
+        activities = self.session.query(Activity).filter(
+            Activity.type.in_(MAPPING_TYPE)
         )
+        cutoff = os.getenv("ACTIVITY_START_DATE", "").strip()
+        if cutoff:
+            activities = activities.filter(Activity.start_date_local >= cutoff)
+        activities = activities.order_by(Activity.start_date_local)
         activity_list = []
 
         streak = 0
@@ -256,6 +258,7 @@ class Generator:
                 streak = 1
             activity.streak = streak
             last_date = date
+            activity.summary_polyline = filter_out(activity.summary_polyline) or ""
             activity_list.append(activity.to_dict())
 
         return activity_list

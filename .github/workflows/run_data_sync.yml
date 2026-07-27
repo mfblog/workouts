@@ -12,7 +12,10 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '0 0 * * *'
+    # Beijing 06:00-07:00 (UTC 22:00-23:00 on the previous day)
+    - cron: '0 22-23 * * *'
+    # Beijing 08:00-20:00 (UTC 00:00-12:00)
+    - cron: '0 0-12 * * *'
 
 env:
   # please change to your own config.
@@ -22,7 +25,7 @@ env:
   ACTIVITY_START_DATE: '2025-06-01' # Keep personal records from June 2025 onward
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
-  IGNORE_START_END_RANGE: 0 # Unit meter
+  IGNORE_START_END_RANGE: 500 # Hide the first and last 500 m of outdoor routes
   # Dont making this huge, just picking points you needing. https://developers.google.com/maps/documentation/utilities/polylineutility using this tool to making your polyline
   IGNORE_POLYLINE: ""
   IGNORE_RANGE: 0 # Unit meter
@@ -163,6 +166,11 @@ jobs:
         if: env.RUN_TYPE == 'tulipsport'
         run: |
           python run_page/tulipsport_sync.py ${{ secrets.TULIPSPORT_TOKEN }} --with-gpx
+
+      - name: Remove raw Garmin files before commit
+        if: env.RUN_TYPE == 'garmin' || env.RUN_TYPE == 'garmin_cn'
+        run: |
+          rm -rf FIT_OUT GPX_OUT TCX_OUT
 
       - name: Push new runs
         if: env.SAVE_DATA_IN_GITHUB_CACHE != 'true'

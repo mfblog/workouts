@@ -6,6 +6,7 @@ Copy most code from https://github.com/cyberjunky/python-garminconnect
 import argparse
 import asyncio
 import logging
+import json
 import os
 import sys
 import time
@@ -23,6 +24,27 @@ from utils import make_activities_file_only
 
 # logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+GARMIN_SYNCED_IDS_FILE = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
+    "garmin_synced_ids.json",
+)
+
+
+def load_synced_garmin_ids():
+    if not os.path.exists(GARMIN_SYNCED_IDS_FILE):
+        return []
+    try:
+        with open(GARMIN_SYNCED_IDS_FILE, "r", encoding="utf-8") as f:
+            return [str(activity_id) for activity_id in json.load(f)]
+    except (OSError, ValueError, TypeError):
+        return []
+
+
+def save_synced_garmin_ids(activity_ids):
+    with open(GARMIN_SYNCED_IDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(set(map(str, activity_ids))), f)
+
 
 TIME_OUT = httpx.Timeout(240.0, connect=360.0)
 GARMIN_COM_URL_DICT = {
@@ -380,7 +402,7 @@ if __name__ == "__main__":
     # make gpx or tcx dir
     if not os.path.exists(folder):
         os.mkdir(folder)
-    downloaded_ids = get_downloaded_ids(folder)
+    downloaded_ids = list(set(get_downloaded_ids(folder) + load_synced_garmin_ids()))
 
     if file_type == "fit":
         gpx_folder = FOLDER_DICT["gpx"]
@@ -403,6 +425,7 @@ if __name__ == "__main__":
     )
     loop.run_until_complete(future)
     new_ids, id2title = future.result()
+    save_synced_garmin_ids(downloaded_ids + new_ids)
     # fit may contain gpx(maybe upload by user)
     if file_type == "fit":
         make_activities_file_only(
