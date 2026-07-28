@@ -147,21 +147,21 @@ export function Header({ filter, setFilter, dark, toggleTheme, activities, page,
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg)]/70 backdrop-blur-md">
-      <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-3 py-2.5 sm:px-4 lg:px-6 lg:py-4 flex flex-wrap lg:flex-nowrap items-center justify-between gap-x-3">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold text-[var(--color-text)]">
+          <span className="text-base sm:text-xl font-bold text-[var(--color-text)] whitespace-nowrap">
             WORKOUT<span className="text-[var(--color-run)]">.</span>LOG
           </span>
         </div>
 
         {/* Sport filter tabs */}
-        <div className="flex items-center gap-1">
+        <div className="order-3 lg:order-none w-full lg:w-auto mt-2 lg:mt-0 flex items-center gap-0.5 sm:gap-1 overflow-x-auto overscroll-x-contain min-w-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {tabs.map((tab) => (
             <button
               key={tab.value}
               onClick={() => { setFilter(tab.value); if (page === 'checkin') onNavigate('home') }}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+              className={`shrink-0 px-2 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
                 filter === tab.value && page === 'home'
                   ? 'bg-[var(--color-accent)] text-white'
                   : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'
@@ -170,16 +170,30 @@ export function Header({ filter, setFilter, dark, toggleTheme, activities, page,
               {tab.label}
             </button>
           ))}
+          <span className="lg:hidden w-px h-4 mx-1 shrink-0 bg-[var(--color-border)]" />
+          {navItems.map((item) => (
+            <button
+              key={`compact-${item.label}`}
+              onClick={() => onNavigate(item.page)}
+              className={`lg:hidden px-1.5 sm:px-2.5 py-1.5 text-xs sm:text-sm whitespace-nowrap shrink-0 transition-colors ${
+                item.page === page
+                  ? 'text-[var(--color-accent)] font-medium'
+                  : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
 
         {/* Right nav */}
-        <div className="flex items-center gap-4">
+        <div className="order-2 lg:order-none flex items-center gap-0.5 sm:gap-1 lg:gap-4 ml-auto lg:ml-0">
           {/* Page nav */}
           {navItems.map((item) => (
             <span
               key={item.label}
               onClick={() => onNavigate(item.page)}
-              className={`text-sm cursor-pointer transition-colors ${
+              className={`hidden lg:inline text-sm cursor-pointer transition-colors ${
                 item.page === page
                   ? 'text-[var(--color-accent)] font-medium'
                   : 'text-[var(--color-muted)] hover:text-[var(--color-text)]'

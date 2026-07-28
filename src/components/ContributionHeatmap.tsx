@@ -288,7 +288,7 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
   }, [yearData, selectedYear])
 
   return (
-    <div ref={captureRef} className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-5 overflow-x-auto">
+    <div ref={captureRef} className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-3 sm:p-5 overflow-hidden">
       <style>{`
         @keyframes fadeSlideIn {
           from { opacity: 0; transform: translateY(8px); }
@@ -305,6 +305,26 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
         .heatmap-year-row {
           animation: fadeSlideIn 0.32s ease-out both;
         }
+        .heatmap-grid,
+        .heatmap-months {
+          --heatmap-gap: clamp(1px, 0.3vw, 3px);
+        }
+        .heatmap-grid {
+          --heatmap-label-width: 0px;
+        }
+        .heatmap-months {
+          margin-left: 1px;
+        }
+        @media (min-width: 640px) {
+          .heatmap-grid { --heatmap-label-width: 12px; }
+          .heatmap-months { margin-left: 15px; }
+        }
+        @media (max-width: 639px) {
+          .heatmap-day-labels { display: none; }
+          .heatmap-month-label:not(:nth-child(3n + 1)) {
+            visibility: hidden;
+          }
+        }
         .exporting,
         .exporting *,
         .exporting *::before,
@@ -315,9 +335,9 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
       `}</style>
 
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <h2 className="text-lg font-semibold">{heatmapTitle}</h2>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {/* ALL button */}
           <button
             onClick={() => handleSelectYear('all')}
@@ -415,25 +435,41 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
                   ))}
               </div>
             )}
-            <div className="flex ml-5">
+            <div
+              className="heatmap-months grid text-[10px] sm:text-xs"
+              style={{
+                gap: 'var(--heatmap-gap)',
+                gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))`,
+              }}
+            >
               {monthPositions.map((m, i) => {
                 const nextStart = monthPositions[i + 1]?.weekIdx ?? grid.length
                 const span = nextStart - m.weekIdx
                 return (
-                  <div key={i} className="text-xs text-[var(--color-muted)]" style={{ width: `${span * 14}px`, minWidth: `${span * 14}px` }}>
+                  <div
+                    key={i}
+                    className="heatmap-month-label min-w-0 text-[var(--color-muted)] whitespace-nowrap overflow-visible"
+                    style={{ gridColumn: `${m.weekIdx + 1} / span ${Math.max(span, 1)}` }}
+                  >
                     {locale === 'zh' ? `${m.label}月` : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m.label) - 1]}
                   </div>
                 )
               })}
             </div>
-            <div className="flex gap-[3px] mt-1">
-              <div className="flex flex-col gap-[3px] mr-1">
+            <div
+              className="heatmap-grid grid mt-1 w-full"
+              style={{
+                gap: 'var(--heatmap-gap)',
+                gridTemplateColumns: `var(--heatmap-label-width) repeat(${grid.length}, minmax(0, 1fr))`,
+              }}
+            >
+              <div className="heatmap-day-labels flex flex-col" style={{ gap: 'var(--heatmap-gap)' }}>
                 {dayLabels.map((d, i) => (
                   <div key={i} className="w-3 h-3 flex items-center justify-center text-[10px] text-[var(--color-muted)]">{d}</div>
                 ))}
               </div>
               {grid.map((week, wi) => (
-                <div key={wi} className="flex flex-col gap-[3px]">
+                <div key={wi} className="flex min-w-0 flex-col" style={{ gap: 'var(--heatmap-gap)' }}>
                   {week.map((day, di) => {
                     const bgColor = day.distance === 0
                       ? 'var(--color-border)'
@@ -448,7 +484,7 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
                     return (
                       <div
                         key={di}
-                        className="w-3 h-3 rounded-sm transition-colors hover:ring-1 hover:ring-[var(--color-muted)] cursor-pointer"
+                        className="w-full min-w-0 aspect-square rounded-[2px] transition-colors hover:ring-1 hover:ring-[var(--color-muted)] cursor-pointer"
                         style={{ backgroundColor: bgColor }}
                         title={titleText}
                         onClick={() => { if (day.activities.length > 0) onSelectActivity?.(day.activities[0]) }}
@@ -504,7 +540,7 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
                   </span>
                 ))}
             </div>
-            <div className="flex items-end justify-end gap-4 text-sm text-[var(--color-muted)] -mt-1">
+            <div className="flex flex-wrap items-end justify-end gap-x-3 gap-y-1 text-xs sm:text-sm text-[var(--color-muted)] -mt-1">
               <span className="font-mono flex items-center gap-1">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 {allStats.count} {locale === 'zh' ? '次' : 'sessions'}
@@ -539,7 +575,7 @@ export function ContributionHeatmap({ activities, year: defaultYear, filter, onS
                 ))}
             </div>
           )}
-          <div className="flex items-end justify-end gap-4 text-sm text-[var(--color-muted)] -mt-1">
+          <div className="flex flex-wrap items-end justify-end gap-x-3 gap-y-1 text-xs sm:text-sm text-[var(--color-muted)] -mt-1">
             <span className="font-mono flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               {yearData[0].stats.count} {locale === 'zh' ? '次' : 'sessions'}

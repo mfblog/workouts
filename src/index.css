@@ -28,6 +28,11 @@
 [data-filter="Ride"] { --color-accent: #3b82f6; }
 [data-filter="Hike"] { --color-accent: #22c55e; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);

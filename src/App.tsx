@@ -65,8 +65,8 @@ export default function App() {
       ) : page === 'checkin' ? (
         <CheckinPage />
       ) : (
-      <main className="max-w-[1400px] mx-auto px-6 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_380px] gap-6 items-start">
+      <main className="max-w-[1400px] mx-auto px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-6">
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-4 lg:gap-6 items-start">
           {/* Left column */}
           <div className="space-y-6 min-w-0 overflow-hidden">
             <StatsCards activities={filtered} allActivities={activities} year={year} filter={filter} onSelectActivity={setSelectedActivity} />
