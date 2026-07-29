@@ -2686,5 +2686,37 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 2
+},
+{
+"run_id": 1785296339000,
+"name": "\u62c9\u8bad\u7ec3\u65e5 4x10 @65%",
+"distance": 0.0,
+"moving_time": "0:28:39.203000",
+"type": "WeightTraining",
+"start_date": "2026-07-29 03:38:59",
+"start_date_local": "2026-07-29 11:38:59",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 109.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 3
+},
+{
+"run_id": 1785298156000,
+"name": "\u8dd1\u6b65\u673a",
+"distance": 4200.0,
+"moving_time": "0:30:33.415000",
+"type": "Run",
+"start_date": "2026-07-29 04:09:16",
+"start_date_local": "2026-07-29 12:09:16",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 151.0,
+"average_speed": 2.291,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 3
 }
 ]
