@@ -2894,5 +2894,21 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 1
+},
+{
+"run_id": 1787023950000,
+"name": "\u529b\u91cf\u8bad\u7ec3",
+"distance": 0.0,
+"moving_time": "0:23:26.459000",
+"type": "WeightTraining",
+"start_date": "2026-08-18 03:32:30",
+"start_date_local": "2026-08-18 11:32:30",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 94.0,
+"average_speed": 0.0,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 2
 }
 ]
