@@ -3102,5 +3102,21 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 5
+},
+{
+"run_id": 1788751846000,
+"name": "\u8dd1\u6b65\u673a",
+"distance": 3706.49,
+"moving_time": "0:34:24.985000",
+"type": "Run",
+"start_date": "2026-09-07 03:30:46",
+"start_date_local": "2026-09-07 11:30:46",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 144.0,
+"average_speed": 1.795,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 1
 }
 ]
